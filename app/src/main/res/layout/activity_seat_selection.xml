@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- NAVBAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/navy"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:tint="@color/white"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Escolha seu assento"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <View android:layout_width="40dp" android:layout_height="40dp" />
+    </LinearLayout>
+
+    <!-- INFO DO VOO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/navy_light"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/tvInfoVoo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GRU → GIG  |  LA3042  |  15 Jun"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/navy_med" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Econômica  ·  2 adultos, 1 criança"
+            android:textSize="12sp"
+            android:textColor="@color/text_mid"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- LEGENDA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_light"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+            <View android:layout_width="12dp" android:layout_height="12dp"
+                android:background="@color/navy_med" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text=" Disponível" android:textSize="10sp" android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+            <View android:layout_width="12dp" android:layout_height="12dp"
+                android:background="@color/seat_occupied" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text=" Ocupado" android:textSize="10sp" android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+            <View android:layout_width="12dp" android:layout_height="12dp"
+                android:background="@color/yellow" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text=" Selecionado" android:textSize="10sp" android:textColor="@color/text_dark" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+            <View android:layout_width="12dp" android:layout_height="12dp"
+                android:background="@color/orange" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text=" Extra leg" android:textSize="10sp" android:textColor="@color/text_dark" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- GRADE DE ASSENTOS (dinâmica via Java) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:id="@+id/layoutAssentos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <!-- RODAPÉ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:id="@+id/tvAssentosSelecionados"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nenhum assento selecionado"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_dark" />
+
+            <TextView
+                android:id="@+id/tvContagem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 / 3"
+                android:textSize="13sp"
+                android:textColor="@color/text_mid" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressAssentos"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:max="3"
+            android:progress="0"
+            android:progressTint="@color/navy_btn"
+            android:progressBackgroundTint="@color/border"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="CONFIRMAR ASSENTOS"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/navy_btn"
+            android:enabled="false"
+            android:alpha="0.5" />
+    </LinearLayout>
+
+</LinearLayout>

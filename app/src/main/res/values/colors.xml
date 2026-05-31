@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy">#1A3C6E</color>
+    <color name="navy_med">#2563EB</color>
+    <color name="navy_light">#DBEAFE</color>
+    <color name="navy_btn">#1D4ED8</color>
+    <color name="green">#16A34A</color>
+    <color name="green_light">#DCFCE7</color>
+    <color name="orange">#EA580C</color>
+    <color name="orange_light">#FFF7ED</color>
+    <color name="purple">#7C3AED</color>
+    <color name="purple_light">#EDE9FE</color>
+    <color name="dark_green">#065F46</color>
+    <color name="text_dark">#1F2937</color>
+    <color name="text_mid">#6B7280</color>
+    <color name="text_light">#9CA3AF</color>
+    <color name="border">#D1D5DB</color>
+    <color name="bg_light">#F3F4F6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#DC2626</color>
+    <color name="red_light">#FEF2F2</color>
+    <color name="seat_occupied">#E5E7EB</color>
+    <color name="yellow">#F59E0B</color>
+</resources>
